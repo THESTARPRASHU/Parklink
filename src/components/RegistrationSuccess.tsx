@@ -46,12 +46,32 @@ export const RegistrationSuccess: React.FC<RegistrationSuccessProps> = ({ user, 
         {/* Vehicle Preview Card */}
         <div className="w-full mt-6 p-4 rounded-2xl bg-slate-900 border border-slate-800 text-left relative overflow-hidden">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-indigo-950 to-slate-800 border border-indigo-500/30 flex items-center justify-center text-3xl shrink-0">
-              {getVehicleIcon(user.vehicle_type)}
+            <div className="relative shrink-0">
+              {user.avatar_url ? (
+                <img
+                  src={user.avatar_url}
+                  alt={user.full_name}
+                  className="w-16 h-16 rounded-xl object-cover border border-indigo-500/50 shadow-md"
+                />
+              ) : (
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-indigo-950 to-slate-800 border border-indigo-500/30 flex items-center justify-center text-3xl">
+                  {getVehicleIcon(user.vehicle_type)}
+                </div>
+              )}
+              <span className="absolute -bottom-1.5 -right-1.5 text-base bg-slate-900 rounded-full p-0.5 border border-slate-700 shadow">
+                {getVehicleIcon(user.vehicle_type)}
+              </span>
             </div>
 
             <div className="min-w-0 flex-1">
-              <span className="text-[10px] uppercase font-bold text-slate-400">Owner</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] uppercase font-bold text-slate-400">Owner</span>
+                {user.avatar_url && (
+                  <span className="px-1.5 py-0.2 rounded text-[9px] bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-bold">
+                    Google Photo Linked
+                  </span>
+                )}
+              </div>
               <p className="text-sm font-bold text-white truncate">{user.full_name}</p>
 
               <div className="mt-1 flex items-center gap-3">

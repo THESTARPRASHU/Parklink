@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS public.users (
   subscription_start TIMESTAMPTZ DEFAULT NOW(),
   subscription_expiry TIMESTAMPTZ DEFAULT (NOW() + INTERVAL '30 days'),
   account_status TEXT DEFAULT 'ACTIVE',
+  avatar_url TEXT,
+  email TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );

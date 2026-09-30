@@ -273,7 +273,7 @@ app.post('/api/users/logout', (req, res) => {
 
 // Register user
 app.post('/api/users/register', async (req, res) => {
-  const { full_name, phone_number, number_plate, vehicle_type } = req.body;
+  const { full_name, phone_number, number_plate, vehicle_type, avatar_url, email } = req.body;
   if (!full_name || !phone_number || !number_plate || !vehicle_type) {
     return res.status(400).json({ error: 'All fields are required.' });
   }
@@ -289,6 +289,7 @@ app.post('/api/users/register', async (req, res) => {
     id: `usr_${Date.now()}`,
     vehicle_id,
     full_name: full_name.trim(),
+    email: email ? String(email).trim() : undefined,
     phone_number: phone_number.trim(),
     vehicle_type,
     number_plate: number_plate.trim().toUpperCase(),
@@ -297,7 +298,7 @@ app.post('/api/users/register', async (req, res) => {
     subscription_start: now.toISOString(),
     subscription_expiry: expiry.toISOString(),
     account_status: 'ACTIVE',
-    avatar_url: `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80`,
+    avatar_url: avatar_url || `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80`,
     created_at: now.toISOString(),
     updated_at: now.toISOString()
   };
@@ -333,6 +334,7 @@ app.post('/api/users/register', async (req, res) => {
       subscription_start: newUser.subscription_start,
       subscription_expiry: newUser.subscription_expiry,
       account_status: newUser.account_status,
+      avatar_url: newUser.avatar_url,
       created_at: newUser.created_at,
       updated_at: newUser.updated_at
     });

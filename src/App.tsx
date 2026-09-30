@@ -101,6 +101,8 @@ export default function App() {
     phone_number: string;
     number_plate: string;
     vehicle_type: any;
+    avatar_url?: string;
+    email?: string;
   }) => {
     const res = await api.register(data);
     setCurrentUser(res.user);

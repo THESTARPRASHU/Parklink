@@ -42,6 +42,8 @@ export const api = {
     phone_number: string;
     number_plate: string;
     vehicle_type: VehicleType;
+    avatar_url?: string;
+    email?: string;
   }): Promise<{ user: User }> {
     const res = await fetch(`${API_BASE}/users/register`, {
       method: 'POST',
