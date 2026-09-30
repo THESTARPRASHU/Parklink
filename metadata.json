@@ -1,0 +1,11 @@
+{
+  "name": "ParkLink - Emergency Vehicle Unblock & Privacy Contact",
+  "description": "Connect with vehicle owners without exposing personal phone numbers. Instant number plate recognition, privacy-safe profiles, and masked calling to unblock parked vehicles.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

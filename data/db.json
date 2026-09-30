@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": "usr_1790757678341",
+      "vehicle_id": "PK-PM8ZNK",
+      "full_name": "Rahul Verma",
+      "phone_number": "+91 9845012345",
+      "vehicle_type": "Car",
+      "number_plate": "KA03HA1212",
+      "normalized_number_plate": "KA03HA1212",
+      "subscription_status": "ACTIVE",
+      "subscription_start": "2026-09-30T08:41:18.341Z",
+      "subscription_expiry": "2026-10-07T08:41:18.341Z",
+      "account_status": "ACTIVE",
+      "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "created_at": "2026-09-30T08:41:18.341Z",
+      "updated_at": "2026-09-30T08:41:18.341Z"
+    }
+  ],
+  "requests": [],
+  "messages": [],
+  "notifications": [
+    {
+      "id": "notif_1790757678341",
+      "recipient_vehicle_id": "PK-PM8ZNK",
+      "title": "Welcome to ParkLink",
+      "message": "Your vehicle KA03HA1212 is registered with Vehicle ID PK-PM8ZNK. You have a 7-day free trial!",
+      "type": "SYSTEM",
+      "read_status": false,
+      "created_at": "2026-09-30T08:41:18.341Z"
+    }
+  ],
+  "reports": [],
+  "searchesCount": 2,
+  "config": {
+    "monthlyPrice": 99,
+    "trialDays": 7,
+    "allowTrial": true,
+    "maskedCallingEnabled": true
+  }
+}
